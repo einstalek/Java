@@ -1,0 +1,18 @@
+EXCEPTION HANDLING
+==================
+
+Если происходит exception, он летит по стеку вверх. 
+
+try, catch, finally
+
+Иерархия исключений
+RunTimeException, Exception
+
+CheckException
+throws
+throw
+
+закрытие ресурсов в finally
+автоматическое закрытие внутри try
+try (FileOutputStream file = new FileOutputStream(...) ) {...} 
+интерфейс AutoClosable
