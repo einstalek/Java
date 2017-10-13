@@ -1,5 +1,6 @@
 import super_junit.TestRunner;
 import tests.ArrayListTest;
+import xml.Person;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

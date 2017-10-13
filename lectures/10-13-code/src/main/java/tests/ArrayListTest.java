@@ -9,7 +9,7 @@ import java.util.List;
 public class ArrayListTest {
 
     @SuperTest
-    public void testSize() {
+    private void testSize() {
         System.out.println("Size test");
         List<Object> objects = new ArrayList<>();
         objects.add("1");

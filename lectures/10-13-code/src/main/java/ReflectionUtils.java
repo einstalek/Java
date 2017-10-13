@@ -12,7 +12,6 @@ public class ReflectionUtils {
             Collections.addAll(result, current_clazz.getDeclaredMethods());
             current_clazz = current_clazz.getSuperclass();
         }
-
         return result;
     }
 }

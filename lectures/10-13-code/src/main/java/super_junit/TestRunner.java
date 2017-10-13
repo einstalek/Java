@@ -9,18 +9,22 @@ public class TestRunner {
 
     public static void runTests(Class<?> testClass) throws IllegalAccessException, InstantiationException, InvocationTargetException {
         List<Method> methods = findTestMethods(testClass);
-        int exceptionsCount = 0;
+        int failedExceptionsCount = 0;
+        int successExceptionsCount = 0;
 
         Object test = testClass.newInstance();
 
         for (Method testMethod: methods) {
+            testMethod.setAccessible(true);
             try {
                 testMethod.invoke(test);
+                successExceptionsCount++;
             } catch (Exception e) {
-                exceptionsCount++;
+                failedExceptionsCount++;
             }
         }
-        System.out.println(exceptionsCount + " exceptions occured.");
+        System.out.println(successExceptionsCount + " successive tests.");
+        System.out.println(failedExceptionsCount + " exceptions occured.");
     }
 
     private static List<Method> findTestMethods(Class<?> testClass) {
