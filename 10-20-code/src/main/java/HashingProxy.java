@@ -15,6 +15,7 @@ public class HashingProxy implements InvocationHandler{
 
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         List<Object> key = getKey(method, args);
+
         Object result = method.invoke(delegate, args);
 
         // Проверяем, что аннотация есть именно в реализации делегата
