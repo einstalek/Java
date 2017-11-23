@@ -18,10 +18,6 @@ public class Main {
                 new Class[]{Calculator.class},
                 new HashingProxy(new SimpleCalculator())
         );
-//        Calculator c = (Calculator) Proxy.newProxyInstance(Calculator.class.getClassLoader(),
-//                Calculator.class.getInterfaces(),
-//                new HashingProxy(new HardCalculator())
-//        );
         c.doCalculation(10);
     }
 }
